@@ -1,8 +1,8 @@
-//
-//  Color+Extension.swift
-//  AboutDev
-//
-//  Created by Ambassador4ik on 3/19/24.
-//
+import SwiftUI
 
-import Foundation
+// Custom colors from Assets
+extension Color {
+    static let accentOne = Color("AppAccentOne")
+    static let accentTwo = Color("AppAccentTwo")
+    static let accentThree = Color("AppAccentThree")
+}

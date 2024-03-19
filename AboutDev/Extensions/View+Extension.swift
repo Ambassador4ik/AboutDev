@@ -1,8 +1,24 @@
-//
-//  View+Extension.swift
-//  AboutDev
-//
-//  Created by Ambassador4ik on 3/19/24.
-//
+import SwiftUI
+import SafariServices
 
-import Foundation
+struct SafariView: UIViewControllerRepresentable {
+    let url: URL
+    
+    func makeUIViewController(context: Context) -> SFSafariViewController {
+        return SFSafariViewController(url: url)
+    }
+    
+    func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {
+
+    }
+}
+
+// Open links inside the application
+extension View {
+    func safariView(isPresented: Binding<Bool>, url: URL) -> some View {
+        self.sheet(isPresented: isPresented) {
+            SafariView(url: url)
+                .ignoresSafeArea(.all)
+        }
+    }
+}
