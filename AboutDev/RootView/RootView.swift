@@ -55,7 +55,7 @@ struct RootView: View {
             self.isTelegramSafariViewPresented.toggle()
         }
         .sheet(isPresented: $isTelegramSafariViewPresented) {
-            SafariView(url: URL(string: "https://t.me/coolsteve")!)
+            SafariView(url: URL(string: "https://t.me/coolsteve")!).ignoresSafeArea(.all)
         }
     }
         
@@ -64,7 +64,7 @@ struct RootView: View {
             self.isWebsiteSafariViewPresented.toggle()
         }
         .sheet(isPresented: $isWebsiteSafariViewPresented) {
-            SafariView(url: URL(string: companyWebsiteURL)!)
+            SafariView(url: URL(string: companyWebsiteURL)!).ignoresSafeArea(.all)
         }
     }
     
